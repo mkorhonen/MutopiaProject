@@ -64,24 +64,6 @@
     tagline = ##f
 }
 
-
-%{
-OuvertureUp = {
-  \time 2/2
-  \key d \major
-  <<
-    \new Voice = "one" \relative c' {
-      r4 r8 r32 fis g e fis4.\mordent d'8 |
-      \grace { d8 } \stemUp cis2 <fis, a cis fis ~ >4\arpeggio  fis'8( fis32) e d cis |
-      b'4.
-    }
-    \new Voice = "two" \relative c' {
-      <e, g>2 s2 |
-    }
-  >>
-}
-%}
-
 \parallelMusic #'(voiceA voiceB voiceC voiceD) {
   \time 2/2
   \key d \major
@@ -185,19 +167,4 @@ OuvertureUp = {
       \layout{ }
       \midi  { \tempo 4 = 70 }
   }
-  %{
-   \header {
-     piece = \markup{\huge{Écho}}
-   }
-  \score {
-      \context PianoStaff <<
-          %-Midi instrument values at 
-          % http://lilypond.org/doc/v2.18/Documentation/snippets/midi#midi-demo-midiinstruments
-          \set PianoStaff.midiInstrument = "harpsichord"
-          \new Staff = "upper" { \clef treble \OuvertureUp }
-          \new Staff = "lower" { \clef bass  \OuvertureDown }
-      >>
-      \layout{ }
-      \midi  { \tempo 4 = 70 }
-  }%}
 }
