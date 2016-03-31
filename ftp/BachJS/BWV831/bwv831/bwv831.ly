@@ -46,6 +46,7 @@
     maintainer = "Mikko Korhonen"
     maintainerEmail = "mikko.korhonen@gmail.com"
     license = "Public Domain"
+    %date = "2016/03/31"
 
     mutopiatitle = "Ouvertüre nach Französischer Art"
     mutopiaopus = "BWV 831"
@@ -63,12 +64,8 @@
     tagline = ##f
 }
 
-%--------Definitions
-global = {
-  \key c \major
-  \time 4/4
-}
 
+%{
 OuvertureUp = {
   \time 2/2
   \key d \major
@@ -83,6 +80,7 @@ OuvertureUp = {
     }
   >>
 }
+%}
 
 \parallelMusic #'(voiceA voiceB voiceC voiceD) {
   \time 2/2
@@ -119,9 +117,46 @@ OuvertureUp = {
   s2 d'4. \stemDown c16\rest e                                          |
   r8 r32 a, b cis d8. e16 fis8. s16 s4                                  | % {8 [(32 32) (32 32)]} {8. 16} {8. 16*} 4*
   fis2 ~ fis8. e16 fis8. g16                                            |
-  
-  
-  
+  % 7
+  \stemUp \grace { d8 } <a cis>4 b8 a \grace { d8 } cis4. d16\rest dis |
+  e,2 a2                                                               |
+  a,2 ~ a8. a16 g8.\prall fis16                                        |
+  s1                                                                   |
+  % 8
+  \grace { dis8 } e4 ~ e32 fis e dis! e16 fis fis4.\trill r16 e32 fis |
+  b1 ~                                                                |
+  s1                                                                  |
+  g8. g'16 fis8. e16 dis8. e32 fis \stemUp b,8. cis32 dis             |
+  % 9
+  g4 ~ g8. fis16 e8.\prall d16 cis8.\prall b16 |
+  b8. b16 ais4 b g                             |
+  s2 r8 r16 b'16 e8.[ d16]                     |
+  \stemDown e4 fis g e                         | 
+  % 10
+  ais4\prallprall ~ ais8.( e'16) d4\prallprall ~ d8. cis16 |
+  fis2 fis                                                 |
+  cis8. r16 r4 r8 r16 fis, gis8.[ a16]                     |
+  fis8. e16 d8. cis16 b2 ~                                 |
+  % 11
+  cis4. ~ cis32 cis, d b cis4.\mordent cis'8 |
+  eis8. s16 s4 s2                            |
+  gis8. s16 s4 r8 r32 cis,32 dis eis fis4 ~  |
+  b8. b16 a8.\prall gis16 a2 ~               |
+  % 12
+  b4.\arpeggio ~ b32 cis, d b cis4.\mordent b'8  |
+  <d fis>4\arpeggio s4 s4. eis8                  |
+  fis8. s16 s4 f8\rest d32\rest gis,! a b cis4 ~ |
+  a8. a16 gis8. fis16 eis4. cis8                 |
+  % 13
+  \grace { b8 } a4. ~ a32 cis, d b \grace { b8 } cis4. a'8   |
+  fis4 s4 s2                                                 |
+  cis16[ cis dis eis] \stemDown fis[ eis fis gis] \stemUp a2 |
+  fis4 s4 fis'2 ~                                            |
+  % 14
+  \grace { a8 } <b, d gis>2 cis'4.\arpeggio ~ cis32 b a gis |
+  s2 <cis e gis!>4\arpeggio s4                              |
+  s1                                                        |
+  fis4. ~ fis32 e fis d e8. cis16 a8. cis16                 |
   
   \repeat unfold 50 {
     cis1 |
@@ -131,26 +166,7 @@ OuvertureUp = {
   }
 }
 
-%{
-OuvertureDown = \relative c' {
-  \time 2/2
-  \key d \major
-  <<
-    {
-      b2(\arpeggio d |
-      \stemNeutral
-      b4.)~ b32 a b g a8. fis16 d8. fis16 |
-    }
-    \\
-    {
-      <b, d fis>2\arpeggio b'
-    }
-  >>
-  %|
-  %\bar "|."
-  %\repeat unfold 30 { c32 }
-}
-%}
+
 
 %-------Typeset music and generate midi
 \book{
